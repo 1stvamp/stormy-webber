@@ -52,26 +52,111 @@
 				- 	 Curate [phpweekly.info](http://phpweekly.info/)
 				</section>
 				<section>
+				<section>
 				## Tornado
-				- 	 First version of HTTP implemented by Tim Berners-Lee in 1991
+				- 	 Fast web server that supports non-blocking I/O
+				- 	 Developed at FriendFeed, open sourced at Facebook in 2009
+				- 	 Long polling, streaming, WebSockets etc.
+				- 	 Pure Python(ish)
+				</section>
+				<section>
+				## Tornado cont.
+				- 	 Usual "framework" features, sessions, auth, templates etc.
+				- 	 Support for callbacks, coroutines and futures (Tulip)
+				</section>
 				</section>
 
 				<section>
 				## Asynchronous
-				- 	 First version of HTTP implemented by Tim Berners-Lee in 1991
+				- 	 Asynchronous != concurrent
+				- 	 Cooperative threading via coroutines (like greenlet/Gevent)
+				- 	 Non-blocking I/O, both HTTP client/server built in
 				</section>
 
 				<section>
 				<section>
-					## Services 
-					- 	 Non-blocking IO
+					## Stringing cats
+					- 	 ioloop.add_callback, ioloop.add_future
+					- 	 gen.coroutine, gen.Task, gen.Wait
 				</section>
+				<section>
+					## e.g.
+					```
+					result = yield motor.Op(db.messages.insert, {'msg': msg})
+					
+					# vs.
+					
+					db.messages.insert(
+					    {'msg': msg},
+					    callback=self._on_response)
+					```
+				</section>
+				</section>
+
+				<section>
+				<section>
+					## Great for RESTful webservices
+				</section>
+				<section>
+					## e.g.
+					```
+					import tornado.web
+					from sys import exit
+
+					from .handlers import ResourceHandler
+					
+					def main():
+					    application = tornado.web.Application((
+						(r"/resources/", ResourceHandler, "resources-root")
+						),)
+					    
+					    application.listen(port=8888, address='0.0.0.0')
+					    return tornado.ioloop.IOLoop.instance().start()
+					
+					if __name__ == "__main__":
+					    exit(main())
+					```
+				</section>
+				<section>
+					## e.g.
+					```
+					import time
+					from tornado.web import asynchronous, RequestHandler
+
+					class ResourceHandler(RequestHandler):
+					    def prepare(self):
+						self.user_id = self.get_argument('user')
+					
+					    @asynchronous
+					    def get(self):
+						tornado.ioloop.IOLoop.instance().add_timeout(
+							time.time()+60, self._end)
+
+					    def _end(self):
+						self.finish('hello world!')
+					```
+				</section>
+				</section>
+
+				<section>
+				## Best man for the job
+				- 	 Can be mixed with other libraries (jinja2, Django components etc.)
+				- 	 Mostly useful if there is an async library available for your backend component (there usually is)
+				- 	 If you want socket.io support gevent has a better library etc.
+				</section>
+
+				<section>
+				## Tips and tricks
+				- 	 Coroutines can be wrapped with greenlets (tornalet)
+				- 	 pycurl and libcurl are **fast**
+				- 	 Support for Python 3.4/Tulip style Futures means further library support
+				- 	 It runs on pypy, extremely fast
+				- 	 You still probably want it behind a faster router/lb (Nginx etc.)
 				</section>
 
 				<section>
 				## sys.exit(0)
 				- 	 Slides: [github.com/1stvamp/stormy-webber](https://github.com/1stvamp/stormy-webber)
-				- 	 Jonathan "Joff" Oliver: [about.me/joffie](http://about.me/joffie)
 				</section>
 			</div>
 
