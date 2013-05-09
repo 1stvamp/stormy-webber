@@ -1,0 +1,34 @@
+body {
+    background: #fff;
+}
+* {
+    color: #000;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #000 !important;
+}
+
+li {
+    list-style-position: inside;
+}
+
+li, span, pre {
+    background-color: #fff;
+    opacity: 0.75;
+    font-size: 80%;
+}
+
+ul {
+    width: 50%;
+}
+
+section {
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-top: 10%;
+    width: 100%;
+}
+
+.reveal a {
+    color: #767676 !important;
+}
