@@ -47,9 +47,8 @@
 				<section>
 				## Who?
 				- 	 @1stvamp (twitter/github)
-				- 	 Engineer at ServerDensity
+				- 	 Engineer at [Server Density](https://www.serverdensity.com/)
 				- 	 I release lots of open source code
-				- 	 Curate [phpweekly.info](http://phpweekly.info/)
 				</section>
 				<section>
 				<section>
@@ -155,8 +154,16 @@
 				</section>
 
 				<section>
+				<section class="exit1">
 				## sys.exit(0)
+				- 	 Code: [git.io/sd](https://git.io/sd) / [git.io/1v](git.io/1v)
 				- 	 Slides: [github.com/1stvamp/stormy-webber](https://github.com/1stvamp/stormy-webber)
+				</section>
+				<section class="exit2">
+				## ^D
+				- 	 Jonathan "Joff" Oliver: [about.me/joffie](http://about.me/joffie)
+				- 	 Grab me and say hi `:-)`
+				</section>
 				</section>
 			</div>
 
@@ -214,6 +221,19 @@
 				]
 				});
 			};
+			Reveal.addEventListener( 'slidechanged', function(event) {
+			    if ($(event.currentSlide).is('.exit2')) {
+				$(event.currentSlide).addClass('animate-exit2');
+				setTimeout(function() {
+				    $(event.currentSlide).removeClass('exit2');
+				    $(event.currentSlide).removeClass('animate-exit2');
+				    setTimeout(function() {
+					$(event.currentSlide).addClass('exit3');
+					$(event.currentSlide).addClass('animate-exit3');
+				    }, 500);
+				}, 4500);
+			    }
+			});
 			
 		</script>
 

@@ -32,3 +32,76 @@ section {
 .reveal a {
     color: #767676 !important;
 }
+
+.slide-2 {
+    background-image: url('../images/westalkwhois.png');
+    background-position: -3em 0;
+}
+
+.exit1 {
+    background-image: url('../images/westalksysexit1.png');
+}
+
+.exit2 {
+    background-image: url('../images/westalkexitmoped.png');
+    background-position: 1000px 0;
+}
+
+.exit3 {
+    background-image: url('../images/westalkexitmob.png');
+    background-position: 1000px 0;
+}
+
+.animate-exit2 {
+    -webkit-animation-duration: 8s;
+    -webkit-animation-name: slidein;
+    -moz-animation-duration: 8s;
+    -moz-animation-name: slidein;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    background-position: -6em 0;
+  }
+ 
+  to {
+    background-position: 1000px 0;
+  }
+}
+
+@-moz-keyframes slidein {
+  from {
+    background-position: -6em 0;
+  }
+ 
+  to {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-exit3 {
+    -webkit-animation-duration: 8s;
+    -webkit-animation-name: slidein2;
+    -moz-animation-duration: 8s;
+    -moz-animation-name: slidein2;
+}
+
+@-webkit-keyframes slidein2 {
+  from {
+    background-position: -6em 0;
+  }
+ 
+  to {
+    background-position: 1000px 0;
+  }
+}
+
+@-moz-keyframes slidein2 {
+  from {
+    background-position: -6em 0;
+  }
+ 
+  to {
+    background-position: 1000px 0;
+  }
+}
