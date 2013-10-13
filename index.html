@@ -172,7 +172,44 @@
 				</section>
 
 				<section>
+				<section>
 				## trequests
+				- 	 Use libraries that use `python-requests` for HTTP
+				- 	 Use Tornado's AsyncHTTPClient/CurlAsyncHTTPClient instead of `httplib3`
+				- 	 Caveat: does require `greenlet`
+				</section>
+				<section>
+				## trequests cont.
+				```
+				"""bobs_big_data.py"""
+				import requests
+
+				class BigData(object):
+				    ...
+
+				    def post(self):
+				        r = requests.post(self.url, data=self.data)
+				        return r.json()
+				```
+				</section>
+				<section>
+				## trequests cont.
+				```
+				import bobs_big_data
+				from tornado.web import RequestHandler
+				from trequests import setup_session
+				from tornalet import tornalet
+
+				setup_session()
+
+				class WebHandler(RequestHandler):
+				    @tornalet
+				    def get(self):
+				        data = {'foo': 'bar'}
+				        response = bobs_big_data.BigData(data).post()
+				        return self.write(response)
+				```
+				</section>
 				</section>
 
 				<section>
