@@ -50,6 +50,7 @@
 				- 	 Engineer at [Server Density](https://www.serverdensity.com/)
 				- 	 I release lots of open source code
 				</section>
+
 				<section>
 				<section>
 				## Tornado
@@ -58,25 +59,27 @@
 				- 	 Long polling, streaming, WebSockets etc.
 				- 	 Pure Python(ish)
 				</section>
+
 				<section>
 				## Tornado cont.
+				- 	 **Not** a framework.
 				- 	 Usual "framework" features, sessions, auth, templates etc.
-				- 	 Support for callbacks, coroutines and futures (Tulip)
+				- 	 Support for callbacks, coroutines and futures (Tulip*ish*)
 				</section>
 				</section>
 
 				<section>
 				## Asynchronous
-				- 	 Asynchronous != concurrent
-				- 	 Cooperative threading via coroutines (like greenlet/Gevent)
+				- 	 Asynchronous != parallel
+				- 	 Cooperative "threading" via callbacks and coroutines
 				- 	 Non-blocking I/O, both HTTP client/server built in
 				</section>
 
 				<section>
 				<section>
 					## Stringing cats
-					- 	 ioloop.add_callback, ioloop.add_future
-					- 	 gen.coroutine, gen.Task, gen.Wait
+					- 	 `ioloop.add_callback`, `ioloop.add_future`
+					- 	 `gen.coroutine`, `gen.Task`, `gen.Wait`
 				</section>
 				<section>
 					## e.g.
@@ -138,19 +141,38 @@
 				</section>
 
 				<section>
-				## Best man for the job
-				- 	 Can be mixed with other libraries (jinja2, Django components etc.)
-				- 	 Mostly useful if there is an async library available for your backend component (there usually is)
+				<section>
+				## Best tool for the job
+				- 	 Can be mixed freely with other libraries
+				- 	 Mostly useful if there is an async library available for your backend component
 				- 	 If you want socket.io support gevent has a better library etc.
+				</section>
+
+				<section>
+				## Batteries included
+				- 	 Templating, auth handlers (including Twitter OAuth `LOL`)
+				- 	 HTTP client / server
+				- 	 TCP client / server (Streams)
+				</section>
+
+				<section>
+				## Batteries included cont.
+				- 	 Thread pools
+				- 	 Async DNS (c-ares)
+				- 	 Process pooling with bound master socket/port
+				</section>
 				</section>
 
 				<section>
 				## Tips and tricks
 				- 	 Coroutines can be wrapped with greenlets (tornalet)
 				- 	 pycurl and libcurl are **fast**
-				- 	 Support for Python 3.4/Tulip style Futures means further library support
+				- 	 Support for Futures (PEP 3156)
 				- 	 It runs on pypy, extremely fast
-				- 	 You still probably want it behind a faster router/lb (Nginx etc.)
+				</section>
+
+				<section>
+				## trequests
 				</section>
 
 				<section>
@@ -230,7 +252,7 @@
 				    setTimeout(function() {
 					$(event.currentSlide).addClass('exit3');
 					$(event.currentSlide).addClass('animate-exit3');
-				    }, 500);
+				    }, 100);
 				}, 4500);
 			    }
 			});
