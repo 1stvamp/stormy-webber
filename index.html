@@ -158,13 +158,19 @@
 				<section>
 				## Batteries included cont.
 				- 	 Thread pools
-				- 	 Async DNS (c-ares)
+				- 	 Async DNS (`c-ares`, threads, `TwistedResolver`)
 				- 	 Process pooling with bound master socket/port
+				</section>
+
+				<section>
+				## Batteries included cont.
+				- 	 `tornado.platform.twisted`
+				- 	 WebSockets / Longpolling
 				</section>
 				</section>
 
 				<section>
-				## Tips and tricks
+				## Bonus &amp; tricks
 				- 	 Coroutines can be wrapped with greenlets (tornalet)
 				- 	 pycurl and libcurl are **fast**
 				- 	 Support for Futures (PEP 3156)
@@ -209,6 +215,10 @@
 				        response = bobs_big_data.BigData(data).post()
 				        return self.write(response)
 				```
+				</section>
+				<section>
+				## trequests cont.
+				[github.com/1stvamp/trequests](https://github.com/1stvamp/trequests/)
 				</section>
 				</section>
 

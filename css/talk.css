@@ -35,7 +35,13 @@ section {
 
 .slide-1 {
     background-image: url('../images/westalkstormywebber.png');
+    background-position: 0 2.5em;
 }
+
+
+.slide-1 a {
+    background-color: #fff;
+    opacity: 0.60;
 
 .slide-2 {
     background-image: url('../images/westalkwhois.png');
@@ -68,7 +74,7 @@ section {
     margin-bottom: 0.5ex;
 }
 
-.slide-18 {
+.slide-19 {
     background-image: url('../images/westalktipsandtricks.png');
     background-position: -2em 0;
 }
