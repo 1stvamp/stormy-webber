@@ -33,8 +33,17 @@ section {
     color: #767676 !important;
 }
 
+.slide-1 {
+    background-image: url('../images/westalkstormywebber.png');
+}
+
 .slide-2 {
     background-image: url('../images/westalkwhois.png');
+    background-position: -3em 0;
+}
+
+.slide-3 {
+    background-image: url('../images/westalktornados.png');
     background-position: -3em 0;
 }
 
