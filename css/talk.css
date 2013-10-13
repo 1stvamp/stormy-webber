@@ -5,6 +5,7 @@ body {
     color: #000;
 }
 h1, h2, h3, h4, h5, h6 {
+    padding-top: 0.5em;
     color: #000 !important;
 }
 
@@ -25,7 +26,7 @@ ul {
 section {
     background-repeat: no-repeat;
     background-position: left center;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 100%;
 }
 
@@ -35,13 +36,14 @@ section {
 
 .slide-1 {
     background-image: url('../images/westalkstormywebber.png');
-    background-position: 0 2.5em;
+    background-position: 0 -1em;
 }
 
 
 .slide-1 a {
     background-color: #fff;
     opacity: 0.60;
+}
 
 .slide-2 {
     background-image: url('../images/westalkwhois.png');
